@@ -7,52 +7,59 @@ const showSidebar = ref(false);
 
 <template>
   <aside>
-    <div :class="$style.container" v-if="showSidebar">
-      <div :class="[$style.btn, $style.closeBtn]">
-        <SidebarButton txt="Close [X]" @click="showSidebar = false" />
+    <div :class="$style.wrapper">
+      <div :class="$style.container" v-if="showSidebar">
+        <div :class="[$style.btn, $style.closeBtn]">
+          <SidebarButton txt="Close [X]" @click="showSidebar = false" />
+        </div>
+        <div :class="[$style.btn, $style.loginLogoutBtn]">
+          <SidebarButton txt="Login/Logout" />
+        </div>
+        <div :class="$style.callendarBtn">
+          <SidebarButton txt="Callendar" />
+        </div>
+        <div :class="$style.btn">
+          <SidebarButton txt="Active periodization" />
+        </div>
+
+        <div :class="[$style.btn, $style.todayToDo]">
+          <SidebarButton txt="Today's script" />
+        </div>
       </div>
-      <div :class="[$style.btn, $style.loginLogoutBtn]">
-        <SidebarButton txt="Login/Logout" />
-      </div>
-      <div :class="$style.callendarBtn">
-        <SidebarButton txt="Callendar" />
-      </div>
-      <div :class="$style.btn">
-        <SidebarButton txt="Active periodization" />
-      </div>
-      <div :class="$style.btn">
-        <SidebarButton txt="Active periodization" />
-      </div>
-      <div :class="[$style.btn, $style.todayToDo]">
-        <SidebarButton txt="Today's script" />
-      </div>
-    </div>
-    <div :class="$style.containerHidden" v-else="showSidebar">
-      <div>
-        <SidebarButton txt="Open" @click="showSidebar = true" />
+      <div :class="$style.containerHidden" v-else="showSidebar">
+        <div>
+          <SidebarButton txt="Open" @click="showSidebar = true" />
+        </div>
       </div>
     </div>
   </aside>
 </template>
 
 <style module lang="scss" scoped>
+.wrapper {
+  transition: 300ms;
+}
+
 .container {
   //background-color: light rgb(222, 222, 222);
   display: flex;
   flex-direction: column;
   height: 58rem;
   border: solid 0.15rem rgb(158, 158, 158);
+  transition: 200ms;
 }
 
 .containerHidden {
   display: flex;
   flex-direction: column;
   height: 58rem;
-  border: solid 0.15rem rgb(158, 158, 158);
+  width: 3rem;
+  border: solid 0.05rem rgb(158, 158, 158);
+  transition: 200ms;
 }
 
 aside {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(198, 198, 198);
   //height: 100%;
 }
 

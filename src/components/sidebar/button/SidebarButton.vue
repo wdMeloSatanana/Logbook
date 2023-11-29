@@ -12,10 +12,12 @@ defineProps<{
 .btn {
   background: slategray;
   border: none;
-  width: 10rem;
-  height: 1.75rem;
+  width: 92%;
+  height: 2rem;
   color: white;
-
+  margin: 0.1rem;
+  border-radius: 5%;
+  border-bottom: 0.25rem rgb(90, 103, 116);
   &:hover {
     background: lightgray;
     color: black;
